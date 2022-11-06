@@ -588,7 +588,7 @@ const Sidebar = () => {
           <Divider />
           <MenuItem
             component={Link}
-            to="/profile/saved"
+            to="/profile"
             onClick={handleClose}
             disableRipple
           >
@@ -609,7 +609,7 @@ const Sidebar = () => {
           <Divider />
           <MenuItem
             component={Link}
-            to="/accounts/edit"
+            to="/"
             onClick={handleClose}
             disableRipple
           >

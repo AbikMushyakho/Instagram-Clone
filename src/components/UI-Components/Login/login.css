@@ -52,7 +52,7 @@ body {
 .slide-container {
     height: 618px;
     flex-basis: 454px;
-    background-image: url("/src/components/UI-Components/Login/images/phone-frame.png");;
+    background-image: url("/src/assets/login-images/phone-frame.png");
 }
 
 .slide-content {
@@ -350,4 +350,25 @@ button:disabled {
         border: 0;
         background-color: transparent;
     }
+}
+
+.signup-text{
+    font-weight: 500;
+    opacity: 0.8;
+    margin: 0 40px 6px;
+    text-align: center;
+    text-justify: inter-word;
+}
+.signup-details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.signup-details span{
+    font-weight: 400;
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin: 0 40px 6px;
+    text-align: center;
+    text-justify: inter-word;
 }

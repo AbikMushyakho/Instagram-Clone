@@ -25,6 +25,7 @@ import NotFound from "./components/UI-Components/NotFound/NotFound";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./components/UI-Components/Login/Login";
+import Signup from "./components/UI-Components/Signup/signup";
 
 
 const App = () => {
@@ -69,6 +70,8 @@ const App = () => {
               <Box flex={3} component="div" pt={2}>
                 <Routes>
                   <Route index element={user === null ? <Login /> : <Home />} />
+           
+                  <Route path="/signup" element={<Signup/>} />
                   <Route
                     path="inbox"
                     element={user === null ? <Login /> : <Inbox />}

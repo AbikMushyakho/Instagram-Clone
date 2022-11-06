@@ -16,9 +16,14 @@ import {
 import React, { useContext, useState } from "react";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
-import { postNewFileContext, themeContext } from "../../../Contexts/Context";
+import {
+  postNewFileContext,
+  themeContext,
+  userContext,
+} from "../../../Contexts/Context";
 
 const AddPost = ({ addPostDialogOpen, setAddPostDialogOpen }) => {
+  const { user, setUser } = useContext(userContext);
   const { mode } = useContext(themeContext);
   const { file, setFile } = useContext(postNewFileContext);
   const [preview, setPreview] = useState(null);
@@ -36,7 +41,14 @@ const AddPost = ({ addPostDialogOpen, setAddPostDialogOpen }) => {
     setOpen(false);
   };
   const handleNewPost = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("title", caption);
+    // formData.append('uploaderId', user)
+
     console.log({
+      user: user,
       caption: caption,
       file: file,
     });
@@ -129,8 +141,7 @@ const AddPost = ({ addPostDialogOpen, setAddPostDialogOpen }) => {
               <IconButton onClick={(e) => setConfirmationDialogOpen(true)}>
                 <svg
                   aria-label="Back"
-                  class="_ab6-"
-                  color="#262626"
+                  color={mode === "dark" ? "#fafafa" : "#262626"}
                   fill="#262626"
                   height="24"
                   role="img"
@@ -230,7 +241,7 @@ const AddPost = ({ addPostDialogOpen, setAddPostDialogOpen }) => {
                   sx={{
                     display: "flex",
                     justifyContent: "end",
-                    width:'100%'
+                    width: "100%",
                   }}
                 >
                   <Button

@@ -16,11 +16,13 @@ const StoryPerson = ({ name, image }) => {
         alt={name}
         src={image}
         component="span"
+       
         sx={{
           borderWidth: "3px",
           borderStyle: "solid",
           borderColor: " #d53a9d",
           borderRadius: "50%",
+         width: 56, height: 56
         }}
       />
 

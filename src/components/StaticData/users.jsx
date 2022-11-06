@@ -33,11 +33,11 @@ const persons = [
 const posts = [
   {
     _id: 1,
-    title: "Post1",
-    description: "A new post",
+    title: "Nature streets",
+    description: "Wonderful nature streets",
     image:
       "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
-    likes: 0,
+    likes: 5,
     uploaderId: 1,
     comments: [
       {
@@ -59,9 +59,9 @@ const posts = [
   },
   {
     _id: 2,
-    title: "Post3",
-    description: "A new post 2",
-    likes: 0,
+    title: "Night Moon and tree",
+    description: "Beautiful night moon and trees",
+    likes: 8,
     uploaderId: 2,
     image:
       "https://1.bp.blogspot.com/-kK7Fxm7U9o0/YN0bSIwSLvI/AAAAAAAACFk/aF4EI7XU_ashruTzTIpifBfNzb4thUivACLcBGAsYHQ/s1280/222.jpg",
@@ -75,9 +75,9 @@ const posts = [
   },
   {
     _id: 3,
-    title: "Post3",
-    description: "A new post 3",
-    likes: 0,
+    title: "Hand and tree",
+    description: "Plantation of trees",
+    likes: 2,
     uploaderId: 2,
     image:
       "https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg",
@@ -92,9 +92,9 @@ const posts = [
   },
   {
     _id: 4,
-    title: "Post4",
-    description: "Post 4",
-    likes: 0,
+    title: "Nature walking",
+    description: "Walking in the nature and yellow leaf",
+    likes: 4,
     uploaderId: 3,
     image:
       "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg",
@@ -107,9 +107,9 @@ const posts = [
     ],
   },
   {
-    _id: 2,
-    title: " post 5",
-    description: "A new post 5",
+    _id: 5,
+    title: " Nature road",
+    description: "Beautiful road with nature",
     likes: 0,
     uploaderId: 2,
     image:

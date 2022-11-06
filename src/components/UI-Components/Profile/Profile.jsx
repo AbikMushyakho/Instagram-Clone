@@ -13,6 +13,7 @@ import {
 import React, { useContext, useState } from "react";
 import posts from "../../StaticData/postImages";
 import { themeContext } from "../../../Contexts/Context";
+import { persons, posts as personPosts } from "../../StaticData/users";
 
 const StyledProfile = styled(Box)({
   display: "flex",
@@ -57,6 +58,7 @@ const GridItem = ({ image }) => {
     </Paper>
   );
 };
+
 const Profile = () => {
   const { mode, setMode } = useContext(themeContext);
 
@@ -141,7 +143,10 @@ const Profile = () => {
       <Stack direction="column" p={4}>
         <StyledProfile>
           <Box flex={0.5} display="flex" justifyContent="center">
-            <Avatar src="" sx={{ width: "6rem", height: "6rem" }} />
+            <Avatar
+              src={persons[0].image}
+              sx={{ width: "6rem", height: "6rem" }}
+            />
           </Box>
           <ProfileDetails>
             <Box
@@ -195,8 +200,8 @@ const Profile = () => {
               width="100%"
             >
               <Typography>94 post</Typography>
-              <Typography>94 post</Typography>
-              <Typography>94 post</Typography>
+              <Typography>94 followers</Typography>
+              <Typography>94 following</Typography>
             </Box>
             <Box
               display="flex"
@@ -214,11 +219,26 @@ const Profile = () => {
         </StyledProfile>
 
         <ProfileStory>
-          <Avatar src="" sx={{ width: "4rem", height: "4rem" }} />
-          <Avatar src="" sx={{ width: "4rem", height: "4rem" }} />
-          <Avatar src="" sx={{ width: "4rem", height: "4rem" }} />
-          <Avatar src="" sx={{ width: "4rem", height: "4rem" }} />
-          <Avatar src="" sx={{ width: "4rem", height: "4rem" }} />
+          <Avatar
+            src={personPosts[0].image}
+            sx={{ width: "4rem", height: "4rem" }}
+          />
+          <Avatar
+            src={personPosts[1].image}
+            sx={{ width: "4rem", height: "4rem" }}
+          />
+          <Avatar
+            src={personPosts[2].image}
+            sx={{ width: "4rem", height: "4rem" }}
+          />
+          <Avatar
+            src={personPosts[3].image}
+            sx={{ width: "4rem", height: "4rem" }}
+          />
+          <Avatar
+            src={personPosts[4].image}
+            sx={{ width: "4rem", height: "4rem" }}
+          />
         </ProfileStory>
         <StyledNavigator>
           <Tabs value={value} onChange={handleChange} selectionFollowsFocus>
@@ -367,21 +387,13 @@ const Profile = () => {
           spacing={{ xs: 2, md: 3 }}
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
-          <Grid item xs={2} sm={4} md={4}>
-            <GridItem image={posts.image1} />
-          </Grid>
-          <Grid item xs={2} sm={4} md={4}>
-            <GridItem image={posts.image2} />
-          </Grid>
-          <Grid item xs={2} sm={4} md={4}>
-            <GridItem image={posts.image3} />
-          </Grid>
-          <Grid item xs={2} sm={4} md={4}>
-            <GridItem image={posts.image4} />
-          </Grid>
-          <Grid item xs={2} sm={4} md={4}>
-            <GridItem image={posts.image5} />
-          </Grid>
+          {personPosts.map((post, index) => {
+            return (
+              <Grid item xs={2} sm={4} md={4}>
+                <GridItem image={post.image} />
+              </Grid>
+            );
+          })}
         </Grid>
       </Stack>
     </>

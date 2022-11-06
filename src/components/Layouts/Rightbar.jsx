@@ -81,6 +81,7 @@ const Rightbar = () => {
           {users.map((user, index) => {
             return (
               <Box
+              key={index}
                 component="div"
                 display="flex"
                 flexDirection="row"

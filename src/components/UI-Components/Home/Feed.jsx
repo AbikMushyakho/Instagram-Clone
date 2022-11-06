@@ -7,7 +7,6 @@ import images from "../../StaticData/persons";
 // import { getAllUser } from "../../../services/all";
 // import { toast } from "react-toastify";
 import { persons, posts as personPost } from "../../StaticData/users";
-
 const Feed = () => {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
@@ -50,8 +49,10 @@ const Feed = () => {
             my={1}
             sx={{
               borderRadius: "5px",
-              overflowX: "scroll",
+              overflowX: "auto",
+              padding:'0.5rem 0'
             }}
+            // className={noScrollbarsClassName}
           >
             {users.map((user, index) => {
               return (
@@ -78,30 +79,13 @@ const Feed = () => {
                   name={uploader.name}
                   avatarImage={uploader.image}
                   postImage={post.image}
+                  title={post.title}
+                  comments={post.comments}
+                  like={post.likes}
+
                 />
               );
             })}
-
-            {/* <Post
-              name="Nita Aryal"
-              avatarImage={images.two}
-              postImage={posts.image2}
-            />
-            <Post
-              name="Him chandra"
-              avatarImage={images.three}
-              postImage={posts.image3}
-            />
-            <Post
-              name="Resham Rishab"
-              avatarImage={images.four}
-              postImage={posts.image4}
-            />
-            <Post
-              name="Nohar Rai"
-              avatarImage={images.five}
-              postImage={posts.image5}
-            /> */}
           </Stack>
         </Paper>
       </Box>
